@@ -1,2 +1,6 @@
-<%= render  "form" %>
-
+<% @gardens.each do |garden| %>
+  <%= garden.title %>
+  <%= garden.address %>
+  <%= garden.price %>
+  <p>---</p>
+<% end %>
