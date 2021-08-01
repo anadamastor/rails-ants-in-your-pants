@@ -1,7 +1,8 @@
 class BookingsController < ApplicationController
+  before_action :set_garden
 
   def index
-    @garden = Garden.find(params[:garden_id])
+    # @garden = Garden.find(params[:garden_id])
     @bookings = @garden.bookings
   end
 
@@ -19,5 +20,8 @@ class BookingsController < ApplicationController
 
   private
 
+  def set_garden
+    @garden = Garden.find(params[:garden_id])
+  end
 end
 
