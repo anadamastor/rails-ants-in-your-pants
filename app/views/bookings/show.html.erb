@@ -1,2 +1,8 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Booking <%= @booking.id %> for <%= @garden.title %></h1>
+    <p class= "lead"> starting at <%=  @booking.start_date  %></p>
+    <p class= "lead"> until <%= @booking.end_date %></p>
+    <%= link_to "Go back to all bookings", garden_bookings_path(@garden, @booking) %>
+  </div>
+</div>

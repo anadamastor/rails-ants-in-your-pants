@@ -1,14 +1,13 @@
 <h1>Bookings#index</h1>
-<p>Find me in app/views/bookings/index.html.erb</p>
 
 <% # this checks if there are bookings and shows them if so %>
 <% if @bookings.empty? %>
-  <h2>no bookings yet for <%= @garden.title %></h2>
+  <h2>no bookings found for <%= @garden.title %></h2>
 <% else %>
   <p> Found <%=@bookings.length%> booking/s for <%= @garden.title %></p>
   <% @bookings.each do |booking| %>
     <p> ---- </p>
-    <p><%= booking.id %></p> 
+    <p><%= link_to booking.id, garden_booking_path(@garden, booking)  %></p> 
     <p> starting at <%=  booking.start_date  %></p>
     <p>until <%= booking.end_date %></p>
     <p> ---- </p>
