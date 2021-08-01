@@ -1,3 +1,4 @@
+<%= link_to "Homepage", root_path, class: "btn btn-primary" %>
 <div class="main-grid">
   <div class="left-grid">
     <% @gardens.each do |garden| %>
@@ -7,6 +8,7 @@
           <div>
             <h2><%= garden.title %></h2>
             <p><%= garden.address %></p>
+            <p><%= link_to "See bookings", garden_bookings_path(garden) %></p>
           </div>
           <h2 class="card-garden-pricing"><%= garden.price %>£</h2>
         </div>
