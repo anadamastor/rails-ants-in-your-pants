@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
-  before_action :set_garden
-
+    before_action :set_user
+    before_action :set_garden
+  
   def index
     # @garden = Garden.find(params[:garden_id])
     @bookings = @garden.bookings
@@ -9,12 +10,22 @@ class BookingsController < ApplicationController
   def show
     @booking = Booking.find(params[:id])
   end
+  
+  def new
+    @booking = Booking.new
+  end
 
   def create
+    @booking = Booking.new(booking_params)
+    @booking.garden = @garden
+    @booking.user = current_user
+    if @booking.save
+      redirect_to garden_bookings_path(@garden)
+    else
+      render :new
+    end
   end
 
-  def new
-  end
 
   def destroy
   end
@@ -23,6 +34,16 @@ class BookingsController < ApplicationController
 
   def set_garden
     @garden = Garden.find(params[:garden_id])
+  end
+
+  def set_user
+    if user_signed_in?
+      @user = current_user
+    end
+  end
+
+  def booking_params
+    params.require(:booking).permit(:start_date, :end_date, :garden_id)
   end
 end
 
