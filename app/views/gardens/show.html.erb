@@ -1,1 +1,22 @@
-<h1>hello world</h1>
+
+<body>
+  <div class="wrapper">
+    <div class="garden-img">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" class="image-responsive" height="520" width="527"/>
+    </div>
+    <div class="garden-info">
+      <div class="garden-text">
+        <h1><%= @garden.title %></h1>
+        <h2><%=@garden.address  %></h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+      <div class="garden-price-btn">
+        <p>£<span><%= @garden.price%></span></p>
+        <button type="button">book now</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
