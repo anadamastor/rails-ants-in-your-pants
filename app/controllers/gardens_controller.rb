@@ -24,8 +24,7 @@ class GardensController < ApplicationController
     end
 
     def create
-      @garden = Garden.new(garden_params)
-      puts "this is where we are"
+      @garden = Garden.new(strong_params)
       @garden.user = @user
       if @garden.save
         redirect_to garden_path(@garden)
@@ -41,7 +40,7 @@ class GardensController < ApplicationController
 
     private
 
-    def garden_params
+    def strong_params
       params.require(:garden).permit(:title, :address, :price)
     end
 
