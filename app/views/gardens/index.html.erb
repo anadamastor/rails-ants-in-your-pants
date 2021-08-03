@@ -6,7 +6,7 @@
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
         <div class="card-garden-infos">
           <div>
-            <h2><%= garden.title %></h2>
+            <h2><%= link_to garden.title, garden_path(garden) %></h2>
             <p><%= garden.address %></p>
             <p><%= link_to "See bookings", garden_bookings_path(garden) %></p>
           </div>
