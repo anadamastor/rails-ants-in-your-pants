@@ -1,0 +1,18 @@
+<h2>Your bookings</h2>
+  <% if current_user.bookings.nil? %>
+    <p>No bookings mades yet</p>
+  <% else %>
+    <% current_user.bookings.each do |booking| %>
+    <div class="card-booking-profile">
+        <div>
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        </div>
+        <div class = " card-booking-text ">
+          <h2><%= link_to booking.id, garden_booking_path(booking.garden, booking)  %></h2> 
+          <p>starting at <%=  booking.start_date  %></p>
+          <p>until <%= booking.end_date %></p>
+        </div>
+    </div>
+    <% end %> 
+  <% end  %>
+
