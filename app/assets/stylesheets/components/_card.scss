@@ -39,3 +39,22 @@
   top: -20px;
   width: 40px;
 }
+
+.card-booking-profile {
+  display: flex;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 280px;
+  margin: 10px;
+  img {
+    overflow: hidden;
+    height: 280px;
+    width: 500px;
+    object-fit: cover;
+  }
+  .card-booking-text {
+    margin-left: 30px;
+    margin-top: 30px;
+  }
+}
+
