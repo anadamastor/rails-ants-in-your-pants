@@ -80,11 +80,11 @@
     padding-bottom: 30px;
   }
   
-  .garden-price-btn button {
-    float: right;
+  .book_btn {
+    float: bottom;
     height: 50px;
     width: 176px;
-    margin: 0 20px 0 16px;
+    margin: 0px 20px 0 66px;
     box-sizing: border-box;
     border: transparent;
     border-radius: 60px;
@@ -93,11 +93,11 @@
     text-transform: uppercase;
     letter-spacing: 0.2em;
     color: #ffffff;
-    background-color: #9cebd5;
+    background-color: #43af5c;
     cursor: pointer;
     outline: none;
   }
   
-  .garden-price-btn button:hover {
-    background-color: #79b0a1;
+  .book_btn:hover {
+    background-color: #ccf26b;
   }
