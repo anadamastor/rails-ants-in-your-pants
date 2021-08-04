@@ -10,7 +10,7 @@
       </div>
       <div class="garden-price-btn">
         <p>£<span><%= @garden.price%></span></p>
-        <button type="button">book now</button>
+        <button type="button"><%= link_to "book now", new_garden_booking_path(@garden, @booking) %></button>
       </div>
     </div>
   </div>
