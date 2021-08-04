@@ -1,3 +1,20 @@
+<div class="container">
+  <div class="d-flex">
+    <div class="search-bar w-100">
+      <%= form_tag gardens_path, method: :get do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "search by address"
+      %> 
+    </div>
+    <div>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
 <div class="main-grid">
   <div class="left-grid">
     <% @gardens.each do |garden| %>

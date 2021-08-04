@@ -4,11 +4,19 @@ class GardensController < ApplicationController
     before_action :set_garden, only: [:show, :edit, :update, :destroy]
 
     def index
-      @gardens = Garden.all
+      if params[:query].present?
+        sql_query = "
+        gardens.address @@ :query
+        "
+        @gardens = Garden.where(sql_query, query: "%#{params[:query]}%")
+      else
+        @gardens = Garden.all
+      end
       @markers = @gardens.geocoded.map do |garden|
         {
           lat: garden.latitude,
-          lng: garden.longitude
+          lng: garden.longitude,
+          info_window: render_to_string(partial: "info_window", locals: { garden: garden })
         }
       end
     end
