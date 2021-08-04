@@ -2,7 +2,7 @@
   <div class="left-grid">
     <% @gardens.each do |garden| %>
       <div class="card-garden">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <%= cl_image_tag garden.photo.key, width: 400, height: 300, crop: :fill %>
         <div class="card-garden-infos">
           <div>
             <h2><%= link_to garden.title, garden_path(garden) %></h2>

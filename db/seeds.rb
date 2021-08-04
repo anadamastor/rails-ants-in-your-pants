@@ -1,3 +1,4 @@
+require "open-uri"
 
 # creating test user
 puts 'Creating 1 test user... pass testing'
@@ -19,13 +20,29 @@ puts 'Creating 10 fake users...'
 end
 puts 'Fake users created!'
 
+
+
+
+
+gardens_urls = [
+  "https://res.cloudinary.com/duxof8o3p/image/upload/v1628119006/gardens/front-yard-ideas-on-a-budget11-561x842_e2pbsl.jpg",
+  "https://res.cloudinary.com/duxof8o3p/image/upload/v1628119006/gardens/front-yard-ideas-on-a-budget20-561x842_mwaufl.jpg",
+  "https://res.cloudinary.com/duxof8o3p/image/upload/v1628119007/gardens/front-yard-ideas-on-a-budget25-561x842_jlodkn.jpg",
+  "https://res.cloudinary.com/duxof8o3p/image/upload/v1628119006/gardens/front-yard-ideas-on-a-budget10-561x842_camfia.jpg",
+  "https://res.cloudinary.com/duxof8o3p/image/upload/v1628119007/gardens/front-yard-ideas-on-a-budget23-561x842_c1d7lo.jpg",
+  "https://res.cloudinary.com/duxof8o3p/image/upload/v1628119007/gardens/front-yard-ideas-on-a-budget22-561x842_qdmp9i.jpg",
+  "https://res.cloudinary.com/duxof8o3p/image/upload/v1628119006/gardens/front-yard-ideas-on-a-budget18-561x842_u27kuh.jpg"
+]
+
 10.times do
-  Garden.create!(
+  garden = Garden.create!(
     user_id: rand(1..9),
     title: Faker::Company.catch_phrase, 
     address: Faker::Address.street_address, 
-    price: rand(10..140)
-  )
+    price: rand(10..140),
+    )
+  file = URI.open(gardens_urls.sample)
+  garden.photo.attach(io: file, filename: 'photo.jpg') 
 end
 
 # creating bookings
@@ -39,3 +56,4 @@ puts 'Creating 30 fake bookings...'
   )
 end
 puts 'Finished!'
+

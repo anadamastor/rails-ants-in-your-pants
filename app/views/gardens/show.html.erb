@@ -1,6 +1,6 @@
   <div class="wrapper">
     <div class="garden-img">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" class="image-responsive" height="520" width="527"/>
+      <%= cl_image_tag @garden.photo.key, width: 400, height: 300, crop: :fill %> 
     </div>
     <div class="garden-info">
       <div class="garden-text">

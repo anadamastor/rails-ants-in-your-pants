@@ -41,7 +41,7 @@ class GardensController < ApplicationController
     private
 
     def strong_params
-      params.require(:garden).permit(:title, :address, :price)
+      params.require(:garden).permit(:title, :address, :price, :photo)
     end
 
     def set_user
