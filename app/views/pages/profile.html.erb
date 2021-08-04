@@ -8,9 +8,9 @@
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
         </div>
         <div class = " card-booking-text ">
-          <h2><%= link_to booking.id, garden_booking_path(booking.garden, booking)  %></h2> 
-          <p>starting at <%=  booking.start_date  %></p>
-          <p>until <%= booking.end_date %></p>
+          <h3> <%= link_to booking.garden.title, garden_booking_path(booking.garden, booking)  %></h3> 
+          <p> <%= booking.garden.address %></p>
+          <p>starting at <%=  booking.start_date  %> until <%= booking.end_date %></p>
         </div>
     </div>
     <% end %> 
