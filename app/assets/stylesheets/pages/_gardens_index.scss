@@ -12,3 +12,13 @@
 .map {
   width: 30vw;
 }
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  font-size: 12px;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
