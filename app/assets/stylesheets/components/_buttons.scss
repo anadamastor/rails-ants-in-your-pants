@@ -1,0 +1,48 @@
+.main_rent {
+  color: white;
+  font-size: 2rem;
+  background: #43af5c ;
+  border: none ;
+  padding: 20px 60px;
+  border-radius: 30px;
+  transition: opacity 0.3s ease;
+  margin: 20px;
+}
+
+.main_rent:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: white;
+  animation: spring 2s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+.main_list {
+  color: white;
+  font-size: 2rem;
+  background: #ccf26b;
+  border: none;
+  padding: 20px 60px;
+  border-radius: 30px; 
+  transition: opacity 0.3s ease;
+  margin: 20px;
+}
+
+
+.main_list:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: white;
+  animation: spring 2s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+@keyframes spring { 
+  0% { transform: scale(1) translateY(0); }
+  10% { transform: scale(1.2, 0.6); }
+  30% { transform: scale(0.8, 1.1) translateY(-50px); }
+  50% { transform: scale(1) translateY(0); }
+  100% { transform: translateY(0); }
+}
