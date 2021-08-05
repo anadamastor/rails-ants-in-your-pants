@@ -5,7 +5,7 @@
     <% current_user.bookings.each do |booking| %>
     <div class="card-booking-profile">
         <div>
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <%= cl_image_tag booking.garden.photo.key, width: 400, height: 300, crop: :fill %>
         </div>
         <div class = " card-booking-text ">
           <h3> <%= link_to booking.garden.title, garden_booking_path(booking.garden, booking)  %></h3> 
