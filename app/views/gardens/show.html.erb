@@ -19,7 +19,7 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       </div>
       <div class="garden-price-btn">
-        <p>£<span><%= @garden.price%></span></p>
+        <p>£<span class="garden_price_info"><%= @garden.price%></span></p>
       </div>
         <div>
         <button class="book_btn" type="button"><%= link_to "book now", new_garden_booking_path(@garden, @booking) %></button>
