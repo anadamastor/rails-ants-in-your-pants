@@ -6,11 +6,19 @@
   width: 70vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 32px; 
+  gap: 30px; 
+  flex-grow: 1;
 }
 
 .map {
+  margin-top: 10px;
+  margin-right: 30px;
   width: 30vw;
+  border-radius: 30px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 100vh;
+  position: sticky;
+  top: 0;
 }
 
 .mapboxgl-popup {
@@ -21,4 +29,8 @@
   font-size: 12px;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+}
+
+.search {
+  margin-bottom: 20px;
 }
