@@ -3,7 +3,9 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 10px;
-  height: 350px;
+  height: 300px;
+  border-radius: 20px;
+  color: #004b3f;
 }
 
 .card-garden > img {
@@ -26,7 +28,7 @@
 
 
 .card-garden .card-garden-infos {
-  padding: 16px;
+  padding: 1vmin;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -38,7 +40,9 @@
   right: 16px;
   top: -20px;
   width: 40px;
+  text-decoration: none;
 }
+
 
 .card-booking-profile {
   display: flex;
@@ -58,3 +62,10 @@
   }
 }
 
+.card-garden a {
+  text-decoration: none;
+  color: #004b3f;
+  :hover {
+
+  }
+}

@@ -1,31 +1,32 @@
   
   .wrapper {
-    height: 20px;
+    height: 600px;
     width: 954px;
     margin: 50px auto;
     border-radius: 7px 7px 7px 7px;
     box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+    display: flex;
   }
   
   .garden-img {
-    float: left;
+    height: 600px;
+    width: 25vw;
   }
   
   .garden-img img {
     border-radius: 7px 0 0 7px;
+    height: 100%;
+    object-fit: cover;
   }
   
   .garden-info {
-    float: right;
-    height: 520px;
-    width: 427px;
+    width: auto;
     border-radius: 0 7px 10px 7px;
     background-color: #ffffff;
   }
   
   .garden-text {
-    height: 300px;
-    width: 327px;
+margin: 1vmin;
   }
   
   .garden-text h1 {
@@ -100,4 +101,15 @@
   
   .book_btn:hover {
     background-color: #ccf26b;
+    animation: spring 2s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+  }
+
+  .book_btn a {
+    text-decoration: none;
+    color: white;
+    :hover {
+  
+    }
   }
