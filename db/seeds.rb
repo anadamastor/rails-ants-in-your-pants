@@ -20,10 +20,6 @@ puts 'Creating 10 fake users...'
 end
 puts 'Fake users created!'
 
-
-
-
-
 gardens_urls = [
   "https://res.cloudinary.com/duxof8o3p/image/upload/v1628119006/gardens/front-yard-ideas-on-a-budget11-561x842_e2pbsl.jpg",
   "https://res.cloudinary.com/duxof8o3p/image/upload/v1628119006/gardens/front-yard-ideas-on-a-budget20-561x842_mwaufl.jpg",
