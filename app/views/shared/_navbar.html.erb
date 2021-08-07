@@ -17,7 +17,7 @@
       </li>
 
         <li class="nav-item ">
-          <%= link_to image_tag("https://res.cloudinary.com/duxof8o3p/image/upload/v1628185888/a_1532547674_1831748291_k12nlg.jpg", class: "avatar"), profile_path %>
+          <%= link_to cl_image_tag current_user.photo, profile_path, class: "avatar"%>
         </li>
       <% else %>
         <li class="nav-item">
