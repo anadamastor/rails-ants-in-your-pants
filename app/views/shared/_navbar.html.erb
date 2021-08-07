@@ -17,7 +17,13 @@
       </li>
 
         <li class="nav-item ">
-          <%# <%= link_to cl_image_tag current_user.photo, profile_path, class: "avatar"%> %>
+            <%= link_to profile_path do %>          
+              <% if user_signed_in? %>
+                <div class="avatar-profile" style = "background-image: url(https://res.cloudinary.com/duxof8o3p/image/upload/v1628204156/orcnli5i1wu4j400yrh7gn3xnz40.jpg)" ></div>
+              <% else %>
+                  <div class="avatar-profile" style = "background-image: url(https://res.cloudinary.com/duxof8o3p/image/upload/v1628204156/orcnli5i1wu4j400yrh7gn3xnz40.jpg)" ></div>
+            <% end %>
+          <% end %>
         </li>
       <% else %>
         <li class="nav-item">
