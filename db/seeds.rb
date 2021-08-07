@@ -1,5 +1,10 @@
 require "open-uri"
 
+puts "Resetting database"
+Booking.destroy_all
+Garden.destroy_all
+User.destroy_all
+
 # creating test user
 puts 'Creating 1 test user... pass testing'
 User.create!(
@@ -32,24 +37,26 @@ gardens_urls = [
 
 10.times do
   garden = Garden.create!(
-    user_id: rand(1..9),
+    user: User.all.sample,
     title: Faker::Company.catch_phrase, 
     address: Faker::Address.street_address, 
     price: rand(10..140),
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     )
-  file = URI.open(gardens_urls.sample)
-  garden.photo.attach(io: file, filename: 'photo.jpg') 
+  rand(0..4).times do
+    file = URI.open(gardens_urls.sample)
+    garden.photos.attach(io: file, filename: 'photo.jpg')
+  end
 end
 
 # creating bookings
 puts 'Creating 30 fake bookings...'
-30.times do
+15.times do
   Booking.create(
     start_date: DateTime.now,
     end_date: DateTime.now + 1,
-    user_id: rand(1..10),
-    garden_id: rand(1..10)
+    user: User.all.sample,
+    garden: Garden.all.sample
   )
 end
 puts 'Finished!'

@@ -9,65 +9,55 @@
   </svg>
 </div>
   <div class="wrapper">
-# <<<<<<< changevalidationphotos
-    <% if @garden.photos.size == 1 %>
-    <img class="d-block garden img w-100" src="<%= cl_image_path @garden.photos.first.key %>" alt="photo" >
+    <% if !@garden.photos.attached? %>
+      <%= image_tag "https://res.cloudinary.com/duxof8o3p/image/upload/v1628185794/pixelart_iokrjw.png", crop: :fill  %>
 
-<% elsif @garden.photos.size > 1 %>
-    <div id="carouselExampleIndicators" class="carousel slide">
+    <% elsif @garden.photos.size == 1 %>
+      <img class="d-block garden img w-100" src="<%= cl_image_path @garden.photos.first.key %>" alt="photo" >
+
+    <% elsif @garden.photos.size > 1 %>
+      <div id="carouselExampleIndicators" class="carousel slide">
         <ol class="carousel-indicators">
-            <% @garden.photos.size.times do |i| %>
-                <li data-target="#carouselExampleIndicators" data-slide-to="<%= i %>" class="<%= "active" if i.zero? %>"></li>
-            <% end %>
+          <% @garden.photos.size.times do |i| %>
+            <li data-target="#carouselExampleIndicators" data-slide-to="<%= i %>" class="<%= "active" if i.zero? %>"></li>
+          <% end %>
         </ol>
-
         <div class="carousel-inner">
-            <% @garden.photos.each_with_index do |photo, index| %>
-                <div class="carousel-item <%= "active" if index.zero? %>">
-                    <img class="d-block garden-img w-100" src="<%= cl_image_path photo.key %>" alt="<%= index.ordinalize %> image">
-                </div>
-            <% end %>
-
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <% @garden.photos.each_with_index do |photo, index| %>
+            <div class="carousel-item <%= "active" if index.zero? %>">
+                <img class="d-block garden-img w-100" src="<%= cl_image_path photo.key %>" alt="<%= index.ordinalize %> image">
+            </div>
+          <% end %>
+        </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
-        </a>
+          </a>
 
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
-        </a>
-    </div>
-<% end %>
-<!-- =======
-<!--     <div class="garden-img">
-      <%# if garden.photo.key is present then show below %>
-      <% if @garden.photo.present? %>
-        <%#= cl_image_tag @garden.photo.key%>
-      <% else %>
-        <%= image_tag "https://res.cloudinary.com/duxof8o3p/image/upload/v1628185794/pixelart_iokrjw.png", width: 400, height: 300, crop: :fill  %>
-        <%# else give a cl_image for a stock image below  %>
-      <%# end %>
-# >>>>>>> master -->
-    </div>
-    <div class="garden-info">
-      <div class="garden-text">
-        <h1><%= @garden.title %></h1>
-        <h2><%=@garden.address  %></h2>
-        <p> <%=@garden.description %> </p>
-      </div>
-      <div class="garden-price-btn">
-        <p>£<span class="garden_price_info"><%= @garden.price%></span></p>
-      </div>
-        <div>
-        <% if current_user == @garden.user %>
-          <button class="book_btn" type="go back"><%= link_to "go back to gardens", gardens_path %></button>
-        <% else %>
-          <button class="book_btn" type="button"><%= link_to "book now", new_garden_booking_path(@garden, @booking) %></button>
-          <button class="book_btn" type="go back"><%= link_to "go back to gardens", gardens_path %></button>
-
-        <% end %>         
-  
+          </a>
         </div>
-    </div>
+    <% end %>
   </div>
+
+  <div class="garden-info">
+    <div class="garden-text">
+      <h1><%= @garden.title %></h1>
+      <h2><%=@garden.address  %></h2>
+      <p> <%=@garden.description %> </p>
+    </div>
+    <div class="garden-price-btn">
+      <p>£<span class="garden_price_info"><%= @garden.price%></span></p>
+    </div>
+      <div>
+      <% if current_user == @garden.user %>
+        <button class="book_btn" type="go back"><%= link_to "go back to gardens", gardens_path %></button>
+      <% else %>
+        <button class="book_btn" type="button"><%= link_to "book now", new_garden_booking_path(@garden, @booking) %></button>
+        <button class="book_btn" type="go back"><%= link_to "go back to gardens", gardens_path %></button>
+      <% end %>         
+      </div>
+  </div>
+
