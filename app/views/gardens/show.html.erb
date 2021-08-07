@@ -8,12 +8,14 @@
     </linearGradient>
   </svg>
 </div>
+  
   <div class="wrapper">
+  <div>
     <% if !@garden.photos.attached? %>
-      <%= image_tag "https://res.cloudinary.com/duxof8o3p/image/upload/v1628185794/pixelart_iokrjw.png", crop: :fill  %>
+      <%= image_tag "https://res.cloudinary.com/duxof8o3p/image/upload/v1628185794/pixelart_iokrjw.png", class:"d-block garden-img w-100"  %>
 
     <% elsif @garden.photos.size == 1 %>
-      <img class="d-block garden img w-100" src="<%= cl_image_path @garden.photos.first.key %>" alt="photo" >
+      <img class="d-block garden-img w-100" src="<%= cl_image_path @garden.photos.first.key %>" alt="photo" >
 
     <% elsif @garden.photos.size > 1 %>
       <div id="carouselExampleIndicators" class="carousel slide">
@@ -42,6 +44,8 @@
     <% end %>
   </div>
 
+
+
   <div class="garden-info">
     <div class="garden-text">
       <h1><%= @garden.title %></h1>
@@ -55,8 +59,8 @@
       <% if current_user == @garden.user %>
         <button class="book_btn" type="go back"><%= link_to "go back to gardens", gardens_path %></button>
       <% else %>
-        <button class="book_btn" type="button"><%= link_to "book now", new_garden_booking_path(@garden, @booking) %></button>
-        <button class="book_btn" type="go back"><%= link_to "go back to gardens", gardens_path %></button>
+        <button class="book_btn float-right my-3" type="button"><%= link_to "book now", new_garden_booking_path(@garden, @booking) %></button>
+        <button class="book_btn float-right " type="go back"><%= link_to "go back to gardens", gardens_path %></button>
       <% end %>         
       </div>
   </div>
