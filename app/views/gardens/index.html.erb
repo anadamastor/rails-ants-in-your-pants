@@ -29,7 +29,13 @@
   <div class="left-grid">
     <% @gardens.each do |garden| %>
       <div class="card-garden">
-        <%= cl_image_tag garden.photo.key, width: 400, height: 300, crop: :fill %>
+      <%# if garden.photo.key is present then show below %>
+      <% if garden.photo.present? %>
+        <%= cl_image_tag garden.photo.key, width: 400, height: 300, crop: :fill  %>
+      <% else %>
+        <%= image_tag "https://res.cloudinary.com/duxof8o3p/image/upload/v1628185794/pixelart_iokrjw.png", width: 400, height: 300, crop: :fill  %>
+        <%# else give a cl_image for a stock image below  %>
+      <% end %>
         <div class="card-garden-infos">
           <div>
             <h2><%= link_to garden.title, garden_path(garden) %></h2>
