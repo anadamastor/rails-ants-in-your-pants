@@ -37,7 +37,7 @@ class GardensController < ApplicationController
       if @garden.save
         redirect_to garden_path(@garden)
       else
-        render :edit
+        render :new
       end
     end
 
