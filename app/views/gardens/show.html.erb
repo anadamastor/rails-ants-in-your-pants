@@ -9,6 +9,7 @@
   </svg>
 </div>
   <div class="wrapper">
+# <<<<<<< changevalidationphotos
     <% if @garden.photos.size == 1 %>
     <img class="d-block garden img w-100" src="<%= cl_image_path @garden.photos.first.key %>" alt="photo" >
 
@@ -38,6 +39,16 @@
         </a>
     </div>
 <% end %>
+<!-- =======
+<!--     <div class="garden-img">
+      <%# if garden.photo.key is present then show below %>
+      <% if @garden.photo.present? %>
+        <%#= cl_image_tag @garden.photo.key%>
+      <% else %>
+        <%= image_tag "https://res.cloudinary.com/duxof8o3p/image/upload/v1628185794/pixelart_iokrjw.png", width: 400, height: 300, crop: :fill  %>
+        <%# else give a cl_image for a stock image below  %>
+      <%# end %>
+# >>>>>>> master -->
     </div>
     <div class="garden-info">
       <div class="garden-text">
@@ -49,7 +60,14 @@
         <p>£<span class="garden_price_info"><%= @garden.price%></span></p>
       </div>
         <div>
-        <button class="book_btn" type="button"><%= link_to "book now", new_garden_booking_path(@garden, @booking) %></button>
+        <% if current_user == @garden.user %>
+          <button class="book_btn" type="go back"><%= link_to "go back to gardens", gardens_path %></button>
+        <% else %>
+          <button class="book_btn" type="button"><%= link_to "book now", new_garden_booking_path(@garden, @booking) %></button>
+          <button class="book_btn" type="go back"><%= link_to "go back to gardens", gardens_path %></button>
+
+        <% end %>         
+  
         </div>
     </div>
   </div>
