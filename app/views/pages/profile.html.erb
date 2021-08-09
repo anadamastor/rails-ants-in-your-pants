@@ -1,18 +1,40 @@
-<h2>Your bookings</h2>
-  <% if current_user.bookings.nil? %>
-    <p>No bookings mades yet</p>
-  <% else %>
-    <% current_user.bookings.each do |booking| %>
-    <div class="card-booking-profile">
-        <div>
-          <%= cl_image_tag booking.garden.photo.key, width: 400, height: 300, crop: :fill %>
-        </div>
-        <div class = " card-booking-text ">
-          <h3> <%= link_to booking.garden.title, garden_booking_path(booking.garden, booking)  %></h3> 
-          <p> <%= booking.garden.address %></p>
-          <p>starting at <%=  booking.start_date  %> until <%= booking.end_date %></p>
-        </div>
-    </div>
+<div class = " wrapper-profile">
+  <div class = "profile-container">
+  <h2>Your bookings</h2>
+    <% if current_user.bookings.nil? %>
+      <p>No bookings mades yet</p>
+    <% else %>
+      <% current_user.bookings.each do |booking| %>
+      <div class="card-booking-profile">
+          <div>
+            <%= cl_image_tag booking.garden.photos[0].key, width: 400, height: 300, crop: :fill %>
+          </div>
+          <div class = " card-booking-text ">
+            <h3> <%= link_to booking.garden.title, garden_booking_path(booking.garden, booking)  %></h3> 
+            <p> <%= booking.garden.address %></p>
+            <p>starting at <%=  booking.start_date  %> until <%= booking.end_date %></p>
+          </div>
+      </div>
+      <% end %> 
     <% end %> 
-  <% end  %>
+  </div> 
 
+  <div class = " profile-container">
+    <h2>Your gardens</h2>
+      <% if current_user.gardens.nil? %>
+        <p>No garden </p>
+      <% else %>
+        <% current_user.gardens.each do |garden| %>
+        <div class="card-booking-profile">
+            <div>
+              <%= cl_image_tag garden.photos[0].key, width: 400, height: 300, crop: :fill %>
+            </div>
+            <div class = " card-booking-text ">
+              <h3> <%= link_to garden.title, garden_path(garden) %></h3> 
+              <p> <%= garden.address %></p>
+            </div>
+        </div>
+        <% end %> 
+      <% end %> 
+  </div>
+</div>
