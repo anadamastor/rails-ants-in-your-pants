@@ -18,7 +18,7 @@
 
         <li class="nav-item ">
             <%= link_to profile_path do %>          
-              <% if user_signed_in? %>
+              <% if user_signed_in? && current_user.photo.attached? %>
                 <div class="avatar-profile" style = "background-image: url(<%= current_user.photo.service_url %>)"></div>
               <% else %>
                   <div class="avatar-profile" style = "background-image: url(https://res.cloudinary.com/duxof8o3p/image/upload/v1628204156/orcnli5i1wu4j400yrh7gn3xnz40.jpg)" ></div>
