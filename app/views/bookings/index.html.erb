@@ -4,7 +4,7 @@
 <% if @bookings.empty? %>
   <h2>no bookings found for <%= @garden.title %></h2>
 <% else %>
-  <p> Found <%=@bookings.length%> booking/s for <%= @garden.title %></p>
+  <p> Found <%=@bookings.reverse.length%> booking/s for <%= @garden.title %></p>
   <% @bookings.each do |booking| %>
     <p> ---- </p>
     <p><%= link_to booking.id, garden_booking_path(@garden, booking)  %></p>
