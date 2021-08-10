@@ -30,15 +30,15 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @review.garden = @garden
     @review.delete
+    @garden = @review.garden
     redirect_to garden_path(@garden)
   end
 
   private
 
   def find_review
-    @review = Garden.find(params[:id])
+    @review = Review.find(params[:id])
   end
 
   def set_garden
