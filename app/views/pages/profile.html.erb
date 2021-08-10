@@ -4,7 +4,7 @@
     <% if current_user.bookings.nil? %>
       <p>No bookings mades yet</p>
     <% else %>
-      <% current_user.bookings.each do |booking| %>
+      <% current_user.bookings.reverse.each do |booking| %>
       <div class="card-booking-profile">
           <div>
             <%= cl_image_tag booking.garden.photos[0].key, width: 400, height: 300, crop: :fill %>
