@@ -1,0 +1,6 @@
+
+<%= simple_form_for ([@garden, @booking]) do |f| %>
+  <%= f.input :start_date,  input_html: { style: "border-radius: 20px;" } %>
+  <%= f.input :end_date,  input_html: { style: "border-radius: 20px;" } %>
+  <%= f.submit "Add a booking", class: "btn btn-primary" %>
+<% end %>
