@@ -78,14 +78,14 @@
             <p>Rating: <%= @garden_rating %></p>
             <% @garden.reviews.each do |review| %>
             <p><% review.rating.times do %>
-              ⭐
+              💚
               <% end %>
             </p>
             <p><%= review.content %></p>
             <% if review.user == current_user %>
               <%= link_to review_path(review), method: :delete,
                   data: { confirm: "Are you sure?" } do %>
-              <p><i class="fas fa-trash"></i> Delete</p>
+              <p class="text-success"><i class="fas fa-trash"></i> Delete</p>
               <% end %>
             <% end %>
             <% unless review == @garden.reviews.last %>

@@ -1,5 +1,5 @@
 <%= simple_form_for [ @garden, @review ] do |f| %>
-  <%= f.input :rating %>
-  <%= f.input :content %>
+  <%= f.input :rating, input_html: { style: "border-radius: 20px;" } %>
+  <%= f.input :content, input_html: { style: "border-radius: 20px;" } %>
   <%= f.submit "Add review", class: "btn btn-flat" %>
 <% end %>
