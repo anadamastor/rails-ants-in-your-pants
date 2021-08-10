@@ -10,7 +10,7 @@
 </div>
 <div class="container">
   <div class="d-flex">
-    <div class="search search-bar w-100">
+    <div class="search search-bar w-100 ">
       <%= form_tag gardens_path, method: :get do %>
       <%= text_field_tag :query,
       params[:query],
@@ -19,7 +19,7 @@
       %> 
     </div>
     <div>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
+      <%= submit_tag "Search", class: "btn btn-primary search-button" %>
       <% end %>
     </div>
   </div>
@@ -28,12 +28,35 @@
 <div class="main-grid">
   <div class="left-grid">
     <% @gardens.each do |garden| %>
-      <div class="card-garden">
+      <div class="card-garden" data-toggle="modal" data-target="#myModal_<%= garden.id %>">
+
+      <div class="modal fade" id="myModal_<%= garden.id %>" tabindex="-1" role="dialog" aria-labelledby="popupLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content popup">
+            <div class="modal-header">
+              <h3 class="modal-title" id="popupLabel"><%= link_to garden.title, garden_path(garden) %></h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h4><%= garden.address  %></h3>
+              <p> <%= garden.description %> </p>
+              <p>£<span class="garden_price_info"><%= garden.price%></span></p>  
+            </div>
+            <div class="modal-footer">
+              <%= link_to "See Garden",  garden_path(garden), class: "book_btn" %>
+              <%= link_to "See bookings",  garden_bookings_path(garden), class: "book_btn" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <%# if garden.photo.key is present then show below %>
       <% if garden.photos.attached? %>
-        <%= cl_image_tag garden.photos[0].key, width: 400, height: 300, crop: :fill   %>
+        <%= cl_image_tag garden.photos[0].key, width: 400, height: 210, crop: :fill   %>
       <% else %>
-        <%= image_tag "https://res.cloudinary.com/duxof8o3p/image/upload/v1628185794/pixelart_iokrjw.png", width: 400, height: 300, crop: :fill  %>
+        <%= image_tag "https://res.cloudinary.com/duxof8o3p/image/upload/v1628185794/pixelart_iokrjw.png", width: 400, height: 210, crop: :fill  %>
         <%# else give a cl_image for a stock image below  %>
       <% end %>
         <div class="card-garden-infos">

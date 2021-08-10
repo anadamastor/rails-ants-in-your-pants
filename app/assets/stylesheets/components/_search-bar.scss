@@ -1,0 +1,38 @@
+.search-button {
+  float: bottom;
+  height: 38px;
+  width: 176px;
+  margin-left: -20px;
+  box-sizing: border-box;
+  border: transparent;
+  border-radius: 60px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+  background-color: #43af5c;
+  cursor: pointer;
+  outline: none;
+}
+
+
+
+.search-bar {
+  float: bottom;
+  height: 50px;
+  border-radius: 60px;
+}
+
+
+.search-button:hover {
+  background-color: #ccf26b;
+}
+
+.search-button a {
+  text-decoration: none;
+  color: white;
+  :hover {
+
+  }
+}

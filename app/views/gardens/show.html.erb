@@ -9,7 +9,7 @@
   </svg>
 </div>
   
-  <div class="wrapper">
+<div class="wrapper">
   <div>
     <% if !@garden.photos.attached? %>
       <%= image_tag "https://res.cloudinary.com/duxof8o3p/image/upload/v1628185794/pixelart_iokrjw.png", class:"d-block garden-img w-100"  %>
@@ -19,7 +19,7 @@
 
     <% elsif @garden.photos.size > 1 %>
       <div id="carouselExampleIndicators" class="carousel slide">
-        <ol class="carousel-indicators">
+        <ol class="carousel-indicators"></ol>
           <% @garden.photos.size.times do |i| %>
             <li data-target="#carouselExampleIndicators" data-slide-to="<%= i %>" class="<%= "active" if i.zero? %>"></li>
           <% end %>
@@ -44,8 +44,6 @@
     <% end %>
   </div>
 
-
-
   <div class="garden-info">
     <div class="garden-text">
       <h1><%= @garden.title %></h1>
@@ -57,11 +55,47 @@
     </div>
       <div>
       <% if current_user == @garden.user %>
-        <button class="book_btn" type="go back"><%= link_to "go back to gardens", gardens_path %></button>
+        <%= link_to "go back", gardens_path, class: "book_btn" %>
       <% else %>
-        <button class="book_btn float-right my-3" type="button"><%= link_to "book now", new_garden_booking_path(@garden, @booking) %></button>
-        <button class="book_btn float-right " type="go back"><%= link_to "go back to gardens", gardens_path %></button>
+        <%= link_to "book now", new_garden_booking_path(@garden, @booking), class: "book_btn float-right my-3" %>
+        <%= link_to "go back to gardens", gardens_path, class: "book_btn float-right" %>
       <% end %>         
       </div>
   </div>
 
+ </div>
+ <div class="wrapper">
+    <div class="reviews">
+        <div class="display-reviews">
+          <% if @garden.reviews.empty? %>
+            <p>Be the first to leave a review!</p>
+          <% else %>
+            <% @sum = 0 %>
+            <% @garden.reviews.each do |review| %>
+              <% @sum += review.rating %>
+            <% end %>
+            <% @garden_rating = @sum.fdiv(@garden.reviews.length) %>
+            <p>Rating: <%= @garden_rating %></p>
+            <% @garden.reviews.each do |review| %>
+            <p><% review.rating.times do %>
+              ⭐
+              <% end %>
+            </p>
+            <p><%= review.content %></p>
+            <% if review.user == current_user %>
+              <%= link_to review_path(review), method: :delete,
+                  data: { confirm: "Are you sure?" } do %>
+              <p><i class="fas fa-trash"></i> Delete</p>
+              <% end %>
+            <% end %>
+            <% unless review == @garden.reviews.last %>
+              <hr>
+            <% end %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="new-review">
+          <%= render "review", garden: @garden, review: @review %>
+        </div>
+        </div>
+ 

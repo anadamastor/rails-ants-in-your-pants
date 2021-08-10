@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   
   resources :gardens do
     resources :bookings, except: [:destroy]
+    resources :reviews, only: [:new, :edit, :create, :update]
   end
-  
+  resources :reviews, only: [:destroy]
   
   root to: 'pages#home'
 end
