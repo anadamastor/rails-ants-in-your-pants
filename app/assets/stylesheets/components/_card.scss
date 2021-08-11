@@ -62,10 +62,17 @@
   }
 }
 
-.card-garden a {
+.card-garden-infos a {
   text-decoration: none;
   color: #004b3f;
   :hover {
 
   }
+}
+
+.card-form {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 20px;
+  border-radius: 20px;
+  width: 30vw;
 }

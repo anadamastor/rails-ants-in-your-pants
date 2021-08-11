@@ -8,17 +8,16 @@
     </linearGradient>
   </svg>
 </div>
-<div class="container">
+<div class="container card-form">
 <div class="row">
 <div class="col-6">
-
 <%= simple_form_for @garden do |f| %>
   <%= f.input :title,  input_html: { style: "border-radius: 20px;" } %>
   <%= f.input :address, class: "garden_address", input_html: { style: "border-radius: 20px;" } %>
   <%= f.input :price, input_html: { style: "border-radius: 20px;" } %>
   <%= f.input :description, input_html: { style: "border-radius: 20px;" } %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit "Add a Garden", class: "btn btn-primary" %>
+  <%= f.submit "Add a Garden", class: "search-button", style: "margin-left: 0px;" %>
 <% end %>
 </div>
 </div>

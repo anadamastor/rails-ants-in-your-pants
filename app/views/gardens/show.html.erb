@@ -8,7 +8,7 @@
     </linearGradient>
   </svg>
 </div>
-  
+ 
 <div class="wrapper">
   <div>
     <% if !@garden.photos.attached? %>
@@ -19,11 +19,7 @@
 
     <% elsif @garden.photos.size > 1 %>
       <div id="carouselExampleIndicators" class="carousel slide">
-        <ol class="carousel-indicators"></ol>
-          <% @garden.photos.size.times do |i| %>
-            <li data-target="#carouselExampleIndicators" data-slide-to="<%= i %>" class="<%= "active" if i.zero? %>"></li>
-          <% end %>
-        </ol>
+
         <div class="carousel-inner">
           <% @garden.photos.each_with_index do |photo, index| %>
             <div class="carousel-item <%= "active" if index.zero? %>">
@@ -55,16 +51,19 @@
     </div>
       <div>
       <% if current_user == @garden.user %>
-        <%= link_to "go back", gardens_path, class: "book_btn" %>
+        <div class="main_buttons">
+          <%= link_to "go back", gardens_path, class: "light-green-button" %>
+        </div>
       <% else %>
-        <%= link_to "book now", new_garden_booking_path(@garden, @booking), class: "book_btn float-right my-3" %>
-        <%= link_to "go back to gardens", gardens_path, class: "book_btn float-right" %>
+       <div class="main_buttons">
+          <%= link_to "book now", new_garden_booking_path(@garden, @booking), class: "light-green-button" %>
+          <%= link_to "go back to gardens", gardens_path, class: "light-green-button" %>
+        </div>
       <% end %>         
       </div>
   </div>
 
- </div>
- <div class="wrapper">
+
     <div class="reviews">
         <div class="display-reviews">
           <% if @garden.reviews.empty? %>
@@ -98,4 +97,4 @@
           <%= render "review", garden: @garden, review: @review %>
         </div>
         </div>
- 
+ </div>

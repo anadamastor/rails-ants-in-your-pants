@@ -1,3 +1,55 @@
+.light-green-button {
+  color: white;
+  font-size: 1rem;
+  background: #43af5c ;
+  border: none ;
+  padding: 1vmin 1rem;
+  border-radius: 30px;
+  transition: opacity 0.3s ease;
+  margin: 20px;
+  text-decoration: none;
+}
+
+.light-green-button:hover {
+  background-color: #ccf26b;
+  text-decoration: none;
+  color: white;
+}
+
+.light-green-button a {
+  text-decoration: none;
+  color: white;
+  :hover {
+
+  }
+}
+
+.dark-green-button {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  background: #ccf26b ;
+  border: none ;
+  padding: 1vmin 1rem;
+  border-radius: 30px;
+  transition: opacity 0.3s ease;
+  margin: 20px;
+}
+
+.dark-green-button:hover {
+  background-color: #43af5c;
+  text-decoration: none;
+  color: white;
+}
+
+.dark-green-button a {
+  text-decoration: none;
+  color: white;
+  :hover {
+
+  }
+}
+
 .main_rent {
   color: white;
   font-size: 2rem;
