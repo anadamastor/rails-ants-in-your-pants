@@ -1,14 +1,23 @@
 .main-grid {
   display: flex;
+  
 }
 
-.left-grid {
-  width: 70vw;
+.scrolling {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 50%;
+  margin: 0 auto;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 30px; 
-  flex-grow: 1;
+  gap: 20px; 
 }
+
+.scrolling::-webkit-scrollbar {
+  display: none;
+}
+
 
 .map {
   margin-top: 10px;
