@@ -61,7 +61,7 @@
             <% end %>
             <div class="card-garden-infos">
               <div>
-                <h2><%= link_to garden.title.truncate(38, separator: ' '), garden_path(garden) %></h2>
+                <h2><%= link_to garden.title.truncate(35, separator: ' '), garden_path(garden) %></h2>
                 <p><%= garden.address %></p>
                 <span class="badge badge-pill badge-info" style="background-color: #ccf26b; margin-top:20px"> <%= pluralize garden.bookings.count, "Booking" %> </span>
                 <span class="badge badge-pill badge-info" style="background-color: #ccf26b; margin-top:20px"> <%= pluralize garden.reviews.count, "Review" %> </span>
