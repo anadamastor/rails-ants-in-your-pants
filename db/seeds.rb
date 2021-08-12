@@ -34,7 +34,7 @@ gardens_urls = [
   "https://res.cloudinary.com/duxof8o3p/image/upload/v1628119007/gardens/front-yard-ideas-on-a-budget22-561x842_qdmp9i.jpg",
   "https://res.cloudinary.com/duxof8o3p/image/upload/v1628119006/gardens/front-yard-ideas-on-a-budget18-561x842_u27kuh.jpg"
 ]
-
+puts 'Creating 10 gardens with reviews'
 10.times do
   garden = Garden.create!(
     user: User.all.sample,
@@ -47,11 +47,20 @@ gardens_urls = [
     file = URI.open(gardens_urls.sample)
     garden.photos.attach(io: file, filename: 'photo.jpg')
   end
+  # creating random reviews
+  rand(2..7).times do
+    review = Review.create!(
+    rating: rand(1..5),
+    content: Faker::Movie.quote,
+    garden: garden,
+    user: garden.user
+    )
+  end
 end
 
 # creating bookings
 puts 'Creating 30 fake bookings...'
-15.times do
+30.times do
   Booking.create(
     start_date: DateTime.now,
     end_date: DateTime.now + 1,
