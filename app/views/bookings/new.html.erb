@@ -11,6 +11,9 @@
 <div class="container card-form">
 <div class="row">
 <div class="col-6">
+
+<%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
 <%= simple_form_for ([@garden, @booking]) do |f| %>
   <%= f.input :start_date, as: :string, input_html: {class: "datepicker", style: "border-radius: 20px;" }  %>
   <%= f.input :end_date, as: :string, input_html: {class: "datepicker", style: "border-radius: 20px;" }  %>
