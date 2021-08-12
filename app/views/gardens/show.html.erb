@@ -52,7 +52,8 @@
       <div>
       <% if current_user == @garden.user %>
         <div class="main_buttons">
-          <%= link_to "go back", gardens_path, class: "light-green-button" %>
+          <%= link_to "All Gardens", gardens_path, class: "light-green-button" %>
+          <%= link_to "Profile", profile_path, class: "light-green-button" %>
         </div>
       <% else %>
        <div class="main_buttons">
