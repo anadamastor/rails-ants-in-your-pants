@@ -20,8 +20,8 @@
             <% @bookings.each do |booking| %>
               <p> ---- </p>
               <p><%= link_to booking.id, garden_booking_path(@garden, booking)  %></p>
-              <p> starting at <%=  booking.start_date  %></p>
-              <p>until <%= booking.end_date %></p>
+              <p> From <%=  booking.start_date  %></p>
+              <p> To <%= booking.end_date %></p>
               <p> ---- </p>
             <% end %>
           <% end %>

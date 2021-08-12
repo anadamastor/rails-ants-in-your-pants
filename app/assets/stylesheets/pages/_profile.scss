@@ -1,15 +1,25 @@
   
   .wrapper-profile {
     height: auto;
-    width: 1700px;
-    margin: 50px auto;
-    border-radius: 7px 7px 7px 7px;
-    box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
     display: flex;
+    justify-content: center;
+    // border-radius: 7px 7px 7px 7px;
+    // box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
     // background-color: red;
   }
 
 .profile-container{
   margin: 16px;
   // background-color: orange;
+}
+.profile-titles{
+  text-align: center ;
+  color: #004b3f;
+  font-size: 36px;
+  line-height: 1;
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-family: 'Lato', sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 20px;
 }

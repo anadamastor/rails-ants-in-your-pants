@@ -24,6 +24,32 @@
   }
 }
 
+.light-green-button-booking {
+  color: white;
+  font-size: 1rem;
+  background: #43af5c ;
+  border: none ;
+  padding: 1vmin 1rem;
+  border-radius: 30px;
+  transition: opacity 0.3s ease;
+  text-decoration: none;
+
+}
+
+.light-green-button-booking:hover {
+  background-color: #ccf26b;
+  text-decoration: none;
+  color: white;
+}
+
+.light-green-button-booking a {
+  text-decoration: none;
+  color: white;
+  :hover {
+
+  }
+}
+
 .dark-green-button {
   color: white;
   text-decoration: none;
