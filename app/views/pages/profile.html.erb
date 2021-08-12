@@ -20,7 +20,13 @@
         <% current_user.bookings.reverse.each do |booking| %>
         <div class="cards-profile">
             <div>
-              <%= cl_image_tag booking.garden.photos[0].key, width: 400, height: 300, crop: :fill %>
+
+              <% if !booking.garden.photos.attached? %>
+                <%= image_tag "https://res.cloudinary.com/duxof8o3p/image/upload/v1628185794/pixelart_iokrjw.png", width: 400, height: 300, crop: :fill  %>
+              <% else %>
+                <%= cl_image_tag booking.garden.photos[0].key, width: 400, height: 300, crop: :fill %>
+              <% end %>
+
             </div>
             <div class = "card-booking-text">
               <h2> <%= link_to booking.garden.title, garden_booking_path(booking.garden, booking)  %></h2> 
@@ -40,9 +46,15 @@
           <p>No garden </p>
         <% else %>
           <% current_user.gardens.each do |garden| %>
-          <div class="cards-profile"">
+          <div class="cards-profile">
               <div>
-                <%= cl_image_tag garden.photos[0].key, width: 400, height: 300, crop: :fill %>
+
+                <% if !garden.photos.attached? %>
+                  <%= image_tag "https://res.cloudinary.com/duxof8o3p/image/upload/v1628185794/pixelart_iokrjw.png", width: 400, height: 300, crop: :fill  %>
+                <% else %>
+                  <%= cl_image_tag garden.photos[0].key, width: 400, height: 300, crop: :fill %>
+                <% end %>
+
               </div>
               <div class = " card-booking-text ">
                 <h2> <%= link_to garden.title, garden_path(garden) %></h2> 
