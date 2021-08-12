@@ -63,7 +63,8 @@
               <div>
                 <h2><%= link_to garden.title.truncate(38, separator: ' '), garden_path(garden) %></h2>
                 <p><%= garden.address %></p>
-                <span class="badge badge-pill badge-info" style="background-color: #ccf26b;"> <%= pluralize garden.bookings.count, "Booking" %> </span>
+                <span class="badge badge-pill badge-info" style="background-color: #ccf26b; margin-top:20px"> <%= pluralize garden.bookings.count, "Booking" %> </span>
+                <span class="badge badge-pill badge-info" style="background-color: #ccf26b; margin-top:20px"> <%= pluralize garden.reviews.count, "Review" %> </span>
                 <%# <p><%= link_to "See bookings", garden_bookings_path(garden) %></p>
               </div>
               <h2 class="card-garden-pricing"><%= garden.price %>£ </h2> <p>/day</p> 
