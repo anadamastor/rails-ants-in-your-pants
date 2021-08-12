@@ -4,8 +4,8 @@
     overflow-x: hidden;
     overflow-y: scroll;
     height: 80%;
-    margin: 0 auto;
-    width: 100%;
+    margin: 0 50px;
+    width: 90%;
     border-radius: 7px 7px 7px 7px;
     box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
     display: flex;
@@ -29,27 +29,61 @@
   .wrapper2::-webkit-scrollbar {
     display: none;
   }
+
+  .wrapper-show {
+    height: 80%;
+    margin: 0 auto;
+    width: 90%;
+    border-radius: 20px;
+    box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+    display: flex;
+    overflow: hidden;
+  }
+
+  .garden-wrapper {
+    width: 32%;
+    overflow: hidden;
+  }
+
   .garden-img {
-    height: 600px;
-    width: 25vw;
+    height: 100%;
+    width: 45vw;
+    border-radius: 20px 0 0 20px;
   }
   
   .garden-img img {
-    border-radius: 7px 0 0 7px;
+    border-radius: 20px;
     height: 100%;
-    object-fit: cover;
+ 
   }
   
   .garden-info {
-    width: auto;
-    border-radius: 0 7px 10px 7px;
+    height: 100%;
+    width: 35vw;
+    
     background-color: #ffffff;
   }
   
   .garden-text {
-margin: 1vmin;
+    margin: 1vmin;
   }
   
+  .reviews {
+    overflow-y: scroll;
+    padding: 20px;
+    width: 35vw;
+    border-radius: 0 20px 20px 0px;
+    background-color: #ffffff; 
+  }
+
+  .reviews::-webkit-scrollbar {
+    display: none;
+  }
+
+  .new-review {
+    width: 25vw;
+  }
+
   .garden-text h1 {
     margin: 0 0 0 38px;
     padding-top: 52px;

@@ -9,8 +9,8 @@
   </svg>
 </div>
  
-<div class="wrapper">
-  <div>
+<div class="wrapper-show">
+  <div class="garden-wrapper">
     <% if !@garden.photos.attached? %>
       <%= image_tag "https://res.cloudinary.com/duxof8o3p/image/upload/v1628185794/pixelart_iokrjw.png", class:"d-block garden-img w-100"  %>
 
@@ -96,5 +96,5 @@
         <div class="new-review">
           <%= render "review", garden: @garden, review: @review %>
         </div>
-        </div>
+    </div>
  </div>
