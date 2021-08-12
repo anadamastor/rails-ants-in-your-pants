@@ -12,7 +12,7 @@
   <div class = " wrapper-profile">
     <div class = "profile-container">
       <div class="profile-titles"> 
-        My bookings 
+        <h2 class="my-stuff">My bookings</h2>
       </div>
       <% if current_user.bookings.nil? %>
         <p>No bookings mades yet</p>
@@ -40,7 +40,7 @@
 
     <div class = "profile-container">
       <div class="profile-titles"> 
-        My gardens 
+        <h2 class="my-stuff">My gardens</h2>
       </div>
         <% if current_user.gardens.nil? %>
           <p>No garden </p>
