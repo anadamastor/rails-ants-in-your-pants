@@ -75,7 +75,7 @@
               <% @sum += review.rating %>
             <% end %>
             <% @garden_rating = @sum.fdiv(@garden.reviews.length) %>
-            <p>Rating: <%= @garden_rating %></p>
+            
             <% @garden.reviews.each do |review| %>
             <p><% review.rating.times do %>
               💚
