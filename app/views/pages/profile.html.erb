@@ -42,7 +42,7 @@
         <% if current_user.gardens.nil? %>
           <p>No garden </p>
         <% else %>
-          <% current_user.gardens.each do |garden| %>
+          <% current_user.gardens.reverse.each do |garden| %>
           <div class="cards-profile">
               <div>
                 <% if !garden.photos.attached? %>
