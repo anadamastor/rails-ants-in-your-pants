@@ -61,7 +61,7 @@
             <% end %>
             <div class="card-garden-infos">
               <div>
-                <h2><%= link_to garden.title.truncate(45, separator: ' '), garden_path(garden) %></h2>
+                <h2><%= link_to garden.title.truncate(39, separator: ' '), garden_path(garden) %></h2>
                 <p><%= garden.address.truncate(35, separator: ' ') %></p>
                 <%# <p><%= link_to "See bookings", garden_bookings_path(garden) %></p>
               <div class="details">
