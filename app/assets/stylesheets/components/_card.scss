@@ -12,12 +12,14 @@
   height: 200px;
   width: 100%;
   object-fit: cover;
+  margin-bottom: 5px;
 }
 
 .card-garden h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  width: 320px;
 }
 
 .card-garden p {
@@ -88,8 +90,11 @@
   text-decoration: none;
   color: #004b3f;
   :hover {
-
   }
+}
+
+.card-garden-infos .p {
+  text-align: left;
 }
 
 .card-form {
@@ -105,4 +110,30 @@
   border-radius: 20px;
   width: 30vw;
   height: 500px;
+}
+.details {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 10x;
+  margin: 0;
+  font-family: "Nunito", "Helvetica", "sans-serif";
+  font-weight: normal;
+  width: 300px;
+  .bit { 
+    position: relative;
+    text-align: right;
+    opacity: 0.8;
+  }
+  .badges{
+    position: relative;
+    background-color: #ccf26b; 
+    margin-top: 15px;
+  }
+  .price {
+    position: relative;
+    top: 2px;
+    margin-right: -40px;
+  }
 }

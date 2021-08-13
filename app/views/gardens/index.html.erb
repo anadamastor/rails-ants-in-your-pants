@@ -43,7 +43,7 @@
                 <div class="modal-body">
                   <h4><%= garden.address  %></h3>
                   <p> <%= garden.description %> </p>
-                  <p>£<span class="garden_price_info"><%= garden.price%></span></p>  
+                  <p><i class="fab fa-btc bit"></i> <span class="garden_price_info"><%= garden.price%></span></p>  
                 </div>
                 <div class="modal-footer">
                   <%= link_to "See Garden",  garden_path(garden), class: "light-green-button" %>
@@ -61,13 +61,19 @@
             <% end %>
             <div class="card-garden-infos">
               <div>
-                <h2><%= link_to garden.title.truncate(35, separator: ' '), garden_path(garden) %></h2>
+                <h2><%= link_to garden.title.truncate(45, separator: ' '), garden_path(garden) %></h2>
                 <p><%= garden.address.truncate(35, separator: ' ') %></p>
-                <span class="badge badge-pill badge-info" style="background-color: #ccf26b; margin-top:20px"> <%= pluralize garden.bookings.count, "Booking" %> </span>
-                <span class="badge badge-pill badge-info" style="background-color: #ccf26b; margin-top:20px"> <%= pluralize garden.reviews.count, "Review" %> </span>
                 <%# <p><%= link_to "See bookings", garden_bookings_path(garden) %></p>
+              <div class="details">
+                <span class="badge badge-pill badge-info badges" > <%= pluralize garden.bookings.count, "Booking" %> </span>
+                <span class="badge badge-pill badge-info badges" style = "margin-left: -95px"> <%= pluralize garden.reviews.count, "Review" %> </span>
+               
+                  <div class= "price">
+                    <%= garden.price %> 
+                    <i class="fab fa-btc bit"></i> /day
+                  </div>
               </div>
-              <h2 class="card-garden-pricing"><%= garden.price %>£ </h2> <p>/day</p> 
+              </div>
             </div>
         </div>
       <% end %>
