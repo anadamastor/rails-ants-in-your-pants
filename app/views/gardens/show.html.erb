@@ -47,7 +47,7 @@
       <p> <%=@garden.description %> </p>
     </div>
     <div class="garden-price-btn">
-      <p>£<span class="garden_price_info"><%= @garden.price%></span></p>
+      <p><i class="fab fa-btc bit"></i> <span class="garden_price_info"><%= @garden.price%></span></p>
     </div>
       <div>
       <% if current_user == @garden.user %>
