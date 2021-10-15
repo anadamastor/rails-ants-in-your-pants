@@ -1,4 +1,4 @@
-## Table of contents
+## AntsInYourPants
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Feaures](#features)
