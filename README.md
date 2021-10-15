@@ -8,13 +8,13 @@ This project is an AirBnB Clone built at the LeWagon Full-Stack Web Development 
 	
 ## Technologies
 Project is created with:
-Ruby on Rails
-PostgreSQL
-JavaScript
+Ruby on Rails / 
+PostgreSQL / 
+JavaScript / 
 Heroku
 	
 ## Features
-Authentication
-Cloudinary
-Geocoding
+Authentication /
+Cloudinary /
+Geocoding /
 
