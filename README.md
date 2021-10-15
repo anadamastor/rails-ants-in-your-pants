@@ -1,1 +1,20 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+## Table of contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Feaures](#features)
+
+## General info
+This project is an AirBnB Clone built at the LeWagon Full-Stack Web Development bootcamp. The app allows users to rend gardens.
+	
+## Technologies
+Project is created with:
+Ruby on Rails
+PostgreSQL
+JavaScript
+Heroku
+	
+## Features
+Authentication
+Cloudinary
+Geocoding
+
